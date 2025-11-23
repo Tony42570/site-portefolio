@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Architecture</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 40px 0;
+            background: #fdfdfd; /* Fond noir */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .page {
+            margin: 20px 0;               /* espace vertical entre pages */
+            background: white;            /* fond blanc derrière chaque page */
+            padding: 20px;                /* effet "bord de page" */
+            border-radius: 6px;
+            box-shadow: none;
+        }
+
+        .page img {
+            display: block;
+            max-width: 70vw;   /* 👉 largeur limitée pour laisser du vide à gauche/droite */
+            height: auto;      /* garde le ratio */
+        }
+    </style>
+</head>
+<body>
+
+<script>
+    const totalPages = 38;
+
+    for (let i = 1; i <= totalPages; i++) {
+        const wrapper = document.createElement("div");
+        wrapper.className = "page";
+
+        const img = document.createElement("img");
+        img.src = `pages/page-${i}.jpg`;
+
+        wrapper.appendChild(img);
+        document.body.appendChild(wrapper);
+    }
+</script>
+
+</body>
+</html>
